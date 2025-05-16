@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+ 
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+ 
+    .navbar {
+      background-color: #2c333a;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+    }
+ 
+    .navbar .brand {
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      margin-right: 20px;
+    }
+ 
+    .navbar nav {
+      display: flex;
+      gap: 10px;
+    }
+    .image-logo{
+        width: 100px;
+        height: 70px;
+        border-radius:20px;
+
+
+   }
+ 
+    .dropdown {
+      position: relative;
+    }
+ 
+    .dropdown > label {
+      color: white;
+      padding: 14px 16px;
+      display: block;
+      cursor: pointer;
+    }
+ 
+    .dropdown input {
+      display: none;
+    }
+ 
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      min-width: 160px;
+      z-index: 1;
+    }
+ 
+    .dropdown-content a {
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      color: black;
+    }
+ 
+    .dropdown input:checked + .dropdown-content {
+      display: block;
+    }
+ 
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+ 
+    /* Main Content */
+    .main {
+      padding: 50px;
+      text-align: center;
+    }
+ 
+    .main h1 {
+      font-size: 24px;
+    }
+ 
+    .main button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+ 
+  </style>
+</head>
+<body>
+ 
+  <div class="navbar">
+    <div class="brand"><img
+        src="{{ url_for('static', filename='nexlogo.PNG') }}"
+        class="image-logo"
+      /></div>
+    <nav>
+      <a href="#" style="color: white; padding: 14px 16px;">Home</a>
+      <div class="dropdown">
+        <label for="leave-toggle">Leave Management ▾</label>
+        <input type="checkbox" id="leave-toggle">
+        <div class="dropdown-content">
+          <a href="#">Apply Leave</a>
+          <a href="#">Leave Status</a>
+          <a href="#">Leave History</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <label for="project-toggle">Project Management ▾</label>
+        <input type="checkbox" id="project-toggle">
+        <div class="dropdown-content">
+          <a href="#">Feasibility Study </a>
+          <a href="#">Project Planning </a>
+          <a href="#">Project Execution</a>
+          <a href="#">Project Termination</a>
+ 
+        </div>
+      </div>
+      <div class="dropdown">
+        <label for="inventory-toggle">Inventory Management ▾</label>
+        <input type="checkbox" id="inventory-toggle">
+        <div class="dropdown-content">
+          <a href="#">Add Item</a>
+          <a href="#">View Inventory</a>
+          <a href="#">Reports</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <label for="inventory-toggle">About Us ▾</label>
+        <input type="checkbox" id="inventory-toggle">
+        <div class="dropdown-content">
+          <a href="#">Contact informtion</a>
+          <a href="#">History</a>
+          <a href="#">Leadership services</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+<div class="main">
+    <main class="max-w-6xl mx-auto p-4 space-y-20">
+        <section id="lifecycle" class="text-center">
+          <h2 class="text-3xl font-bold mb-4">Project Management Life Cycle</h2>
+          <img src="{{ url_for('static', filename='lifecycle image1vk.PNG') }}" alt="Project Management Life Cycle" class="mx-auto w-full max-w-2xl rounded shadow" />
+          <p class="mt-4 text-gray-700">The five essential phases of project management: Initiation, Planning, Execution, Monitoring & Controlling, and Closure.</p>
+        </section>
+        <section id="initiation" class="text-center">
+          <h2 class="text-2xl font-semibold mb-4">Key Roles in Project Initiation</h2>
+          <img src="{{ url_for('static', filename='image2vk.PNG') }}" alt="Project Initiation Roles" class="mx-auto w-full max-w-2xl rounded shadow" />
+          <p class="mt-4 text-gray-700">Initiation sets the stage with roles like the Sponsor, Manager, Stakeholders, Subject Matter Experts, and the Team for direction and alignment.</p>
+        </section>
+        <section id="planning" class="text-center">
+          <h2 class="text-2xl font-semibold mb-4">Project Management Plan</h2>
+          <img src="{{ url_for('static', filename='planimage3vk.PNG') }}" alt="Project Management Plan" class="mx-auto w-full max-w-2xl rounded shadow" />
+          <p class="mt-4 text-gray-700">This phase defines how the project will be executed and monitored, including scope, risk, budget, timeline, and communications.</p>
+        </section>
+        <section id="execution" class="text-center">
+          <h2 class="text-2xl font-semibold mb-4">Project Execution</h2>
+          <img src="{{ url_for('static', filename='image4 executionvk.PNG') }}" alt="Project Execution" class="mx-auto w-full max-w-2xl rounded shadow" />
+          <p class="mt-4 text-gray-700">Project Execution brings the plan to life by managing deliverables through key domains like risk, time, quality, and communication.</p>
+        </section>
+        <section id="monitoring" class="text-center">
+          <h2 class="text-2xl font-semibold mb-4">Monitoring & Controlling</h2>
+          <img src="{{ url_for('static', filename='monitoring image5vk.PNG') }}" alt="Monitoring and Controlling" class="mx-auto w-full max-w-2xl rounded shadow" />
+          <p class="mt-4 text-gray-700">This stage ensures everything stays on track by continuously measuring performance and making real-time adjustments.</p>
+        </section>
+        <section id="closure" class="text-center">
+          <h2 class="text-2xl font-semibold mb-4">Steps Needed to Close a Project</h2>
+          <img src="{{ url_for('static', filename='closureimage6vk.PNG') }}" alt="Project Closure Steps" class="mx-auto w-full max-w-2xl rounded shadow" />
+          <p class="mt-4 text-gray-700">Final project closure involves documentation, handover, evaluation, and celebration to confirm successful delivery.</p>
+        </section>
+        <button class="blue-button">Go Back</button>
+     
+    </main>
+   
+    </body>
+    </html>
+  </div>
+ 
+</body>
+</html>
