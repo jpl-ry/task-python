@@ -21,7 +21,7 @@ def login():
             return redirect(url_for('home'))
         else:
             return "Invalid credentials. <a href='/'>Try again</a>"
-
+        
     return render_template('login2.html')
 
 @app.route('/home')
@@ -33,4 +33,4 @@ def home():
      return render_template('home.html')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(debug=True)
