@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app-deployment
+  labels:
+    app: python-app
+  replicas: 2
+  selector:
+    matchLabels:
+      app: python-app
+  template:
+    metadata:
+      labels:
+        app: python-app
+    spec:
+      containers:
+      - name: python-app
+        image: your-dockerhub-username/python-app:latest
+        ports:
+        - containerPort: 5000
+
+---
+kind: Service
+metadata:
+  name: python-app-nodeport
+spec:
+  type: NodePort
+  selector:
+  ports:
+      targetPort: 5000
+      nodePort: 30036  # Optional; if omitted, Kubernetes auto-assigns a port in the 30000-32767 range
+
